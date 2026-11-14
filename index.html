@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOVEX — Moving Things Together</title>
+    <meta name="description" content="AI-powered parcel delivery platform connecting senders with travellers and transport providers across Bike, Car, Bus, Train, Flight, and Commercial Freight." />
+    <meta name="keywords" content="parcel delivery, community relay, crowdsourced logistics, goa courier, package tracking, dynamic pricing, same day delivery" />
+    <meta property="og:title" content="MOVEX — Moving Things Together" />
+    <meta property="og:description" content="Send parcels affordably with Community Relay or fast with Premium Express across 6 transport modes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MOVEX — Moving Things Together" />
+    <meta name="twitter:description" content="Send parcels affordably with Community Relay or fast with Premium Express across 6 transport modes." />
+    <meta name="twitter:image" content="/og-image.svg" />
+    
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#101114" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+    <!-- Theme flashing prevention script -->
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('movex_theme');
+          var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && supportDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-[#101114] text-[#101114] dark:text-neutral-100 antialiased selection:bg-[#FFD43B] selection:text-[#101114]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

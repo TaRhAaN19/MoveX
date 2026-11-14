@@ -1,0 +1,1176 @@
+# MOVEX — COMPLETE FULL-STACK DEVELOPMENT, UI REDESIGN AND FUNCTIONALITY PROMPT
+
+Act as a senior full-stack developer, software architect, UI/UX designer, AI engineer and database developer.
+
+Your task is to improve and complete the existing MOVEX application.
+
+IMPORTANT: An existing MOVEX project already exists in the workspace. First inspect the complete project structure, existing frontend, backend, database, API endpoints and installed dependencies.
+
+DO NOT delete the existing project and rebuild it from scratch.
+
+DO NOT overwrite working functionality unnecessarily.
+
+Preserve existing working code and improve it systematically.
+
+The final application must be a fully functional hackathon prototype, not merely a static UI demonstration.
+
+# 1. PROJECT OVERVIEW
+
+Brand: MOVEX
+
+Tagline: Moving Things Together.
+
+Concept:
+
+MOVEX is an AI-powered parcel delivery platform connecting people who want to send parcels with individuals and transport providers already travelling towards their destination.
+
+The platform makes parcel delivery affordable, accessible, convenient and reliable by utilising existing journeys and different transportation modes.
+
+Two delivery models:
+
+A. COMMUNITY RELAY
+
+- People travelling towards a destination carry parcels.
+- The platform matches parcels with existing travel routes.
+- AI suggests convenient pickup and drop-off points.
+- Sender and delivery partner mutually agree on meeting points.
+- Delivery partners earn money for carrying parcels.
+- No dedicated journey should be created solely for a Community Relay parcel.
+
+B. PREMIUM EXPRESS
+
+- A dedicated delivery partner handles the entire delivery.
+- Doorstep pickup and delivery.
+- Faster and more convenient service.
+- Higher delivery charges.
+
+# 2. DESIGN REDESIGN — RAPIDO-INSPIRED UI
+
+Completely improve the existing user interface.
+
+Use the usability and simplicity of the Rapido application as inspiration.
+
+Do not copy its logo, proprietary assets or exact interface.
+
+The MOVEX interface should be:
+- Minimalist.
+- Modern.
+- Clean.
+- Easy to navigate.
+- Mobile-first.
+- Professional.
+- Visually attractive.
+
+Colour palette:
+
+- Primary black: #101114
+- White: #FFFFFF
+- Yellow accent: #FFD43B
+- Light grey: #F5F5F5
+- Graphite: #25282D
+- Secondary text: #777777
+
+Use yellow for primary actions and important highlights.
+
+Use white backgrounds, black typography and light grey cards.
+
+Avoid:
+- Overcrowded dashboards.
+- Excessive animations.
+- Unnecessary gradients.
+- Too many colours.
+- Complicated navigation.
+- Oversized decorative elements.
+
+Use:
+- Rounded cards.
+- Simple icons.
+- Clear typography.
+- Consistent spacing.
+- Smooth transitions.
+- Responsive layouts.
+- Attractive location input fields.
+- Clear booking progress indicators.
+
+The interface should feel like a professional transportation and delivery startup.
+
+# 3. OPENING SCREEN — USER ACTIVITY SELECTION
+
+This is one of the most important requirements.
+
+When users open MOVEX, show:
+
+"MOVEX — MOVING THINGS TOGETHER"
+
+Ask:
+
+"WHAT WOULD YOU LIKE TO DO TODAY?"
+
+Display two large selectable cards.
+
+OPTION 1: SEND A PARCEL
+
+Subtitle: Send anything, anywhere.
+
+Description:
+Book a convenient and affordable parcel delivery.
+
+When selected, open the customer/sender experience.
+
+OPTION 2: DELIVER A PARCEL
+
+Subtitle: Earn while you're on the move.
+
+Description:
+Share your existing journey and earn money carrying parcels.
+
+When selected, open the delivery partner experience.
+
+IMPORTANT:
+
+Do not force users to remain permanently restricted to one activity.
+
+A registered user should be able to switch between sending and delivering through the application, subject to the appropriate account verification and permissions.
+
+Provide clear navigation for switching activities.
+
+# 4. AUTHENTICATION AND USER MANAGEMENT
+
+Implement:
+- Registration.
+- Login.
+- Logout.
+- Password validation.
+- Role-based access.
+- Profile management.
+- Mobile and email details.
+- Verification status.
+
+Roles:
+- Sender.
+- Delivery Partner.
+- Administrator.
+
+Create separate dashboards for each role.
+
+Use JWT authentication through the existing FastAPI backend.
+
+Do not expose administrator functions to ordinary users.
+
+Provide demo accounts for testing.
+
+# 5. SENDER INTERFACE
+
+Create a clean, Rapido-inspired parcel booking experience.
+
+The sender dashboard should include:
+
+- Home.
+- Send Parcel.
+- My Parcels.
+- Track Parcel.
+- Payments.
+- Disputes.
+- Profile.
+
+The main dashboard should display:
+
+- Welcome message.
+- Active parcels.
+- Completed deliveries.
+- Recent bookings.
+- Recent transactions.
+- Prominent Send a Parcel button.
+
+## 5.1 Parcel booking process
+
+Use a simple multi-step booking interface.
+
+STEP 1: PICKUP AND DESTINATION
+
+Display two prominent location input fields.
+
+Pickup:
+"Where should we collect your parcel?"
+
+Destination:
+"Where should your parcel go?"
+
+Features:
+- Search locations.
+- Location suggestions.
+- Current location access with permission.
+- Manual map selection.
+- Map marker selection.
+- Swap pickup and destination.
+- Edit selected locations.
+
+Display a map underneath the location fields.
+
+STEP 2: DELIVERY MODEL
+
+Display two selectable cards.
+
+Community Relay:
+- Affordable.
+- Existing journeys.
+- Flexible meeting points.
+- AI route matching.
+
+Premium Express:
+- Dedicated delivery partner.
+- Doorstep pickup.
+- Direct delivery.
+- Faster service.
+
+STEP 3: TRANSPORTATION MODE
+
+Provide six selectable transportation options:
+
+1. Bike.
+2. Car.
+3. Bus.
+4. Train.
+5. Flight.
+6. Commercial Freight.
+
+Each card should display:
+- Transportation icon.
+- Mode name.
+- Starting price.
+- Estimated delivery time.
+- Parcel compatibility.
+
+Allow the sender to choose a preferred mode or automatically find a suitable mode.
+
+STEP 4: PARCEL INFORMATION
+
+Collect:
+- Parcel category.
+- Exact weight.
+- Length.
+- Width.
+- Height.
+- Declared contents.
+- Parcel photograph.
+- Declared value.
+- Fragile item declaration.
+
+Parcel categories:
+
+XS: Up to 500 g.
+S: Above 500 g to 2 kg.
+M: Above 2 kg to 5 kg.
+L: Above 5 kg to 10 kg.
+XL: Above 10 kg to 15 kg.
+
+Validate weight and dimensions.
+
+Do not allow parcels above the prototype's 15 kg limit.
+
+Transportation compatibility must consider parcel dimensions and weight.
+
+STEP 5: PARTNER MATCHING
+
+Display:
+- Recommended delivery partners.
+- Route compatibility score.
+- Transportation mode.
+- Partner reliability.
+- Available capacity.
+- Estimated delivery time.
+- Expected delivery charges.
+- Suggested meeting points.
+
+STEP 6: BOOKING CONFIRMATION
+
+Display the complete parcel details and transparent pricing.
+
+Allow the sender to confirm the booking and proceed to payment.
+
+# 6. DYNAMIC TRANSPORTATION PRICING
+
+This is a critical requirement.
+
+The estimated delivery cost must be displayed immediately after the sender chooses a transportation mode.
+
+The cost must change automatically based on:
+
+- Transportation mode.
+- Parcel weight.
+- Parcel dimensions.
+- Pickup location.
+- Destination.
+- Distance.
+- Delivery model.
+- Urgency.
+
+## 6.1 Starting fare configuration
+
+Use these illustrative prototype starting prices:
+
+Bike: ₹30.
+Car: ₹50.
+Bus: ₹40.
+Train: ₹60.
+Flight: ₹150.
+Commercial Freight: ₹100.
+
+These prices must be configurable in the backend.
+
+## 6.2 Pricing formula
+
+Calculate:
+
+Final Price =
+
+Base Fare
++ Distance Charge
++ Weight Charge
++ Dimension Charge
++ Delivery Model Charge
++ Urgency Charge
++ Platform Fee.
+
+Use separate rates for each transportation mode.
+
+Bike should generally be the cheapest compatible option.
+
+Car should cost more than bike.
+
+Bus and train should have their own competitive pricing.
+
+Flight should generally be more expensive.
+
+Commercial freight should use weight, volume and freight-specific pricing.
+
+The weight charge must increase gradually as parcel weight increases.
+
+## 6.3 Live price updates
+
+Whenever the user changes:
+- Transportation mode.
+- Parcel weight.
+- Parcel dimensions.
+- Pickup location.
+- Destination.
+- Delivery model.
+
+Automatically recalculate the price.
+
+Do not require the user to refresh the page.
+
+## 6.4 Pricing display
+
+Create a prominent fare card.
+
+Example:
+
+MOVEX ESTIMATED FARE
+
+Bike: ₹65
+
+Estimated delivery: 2–3 hours.
+
+Price breakdown:
+
+Base fare: ₹30.
+Distance charge: ₹20.
+Weight charge: ₹10.
+Platform fee: ₹5.
+
+Total: ₹65.
+
+This is illustrative data.
+
+The final displayed price must match the backend price used during booking.
+
+Do not hardcode different pricing formulas in different frontend components.
+
+Centralise pricing calculations in the backend.
+
+# 7. CRITICAL MAP BUG FIX
+
+There is an existing problem where the map displays the same location even after the user changes pickup or destination.
+
+This must be properly investigated and fixed.
+
+Do not simply update the text input while keeping old coordinates.
+
+## Required behaviour
+
+Whenever a user changes pickup or destination:
+
+1. Read the latest selected location.
+2. Geocode the new location.
+3. Obtain the correct latitude and longitude.
+4. Update the pickup marker.
+5. Update the destination marker.
+6. Recalculate the route.
+7. Update the distance.
+8. Update the estimated delivery time.
+9. Recalculate the delivery price.
+
+The map must always reflect the latest selected locations.
+
+## Technical requirements
+
+Inspect the existing map implementation.
+
+Check for:
+- Incorrect React state.
+- Stale location values.
+- Incorrect geocoding.
+- Cached coordinates.
+- React Leaflet marker update problems.
+- Incorrect map component rendering.
+- Asynchronous request race conditions.
+
+Implement proper state management.
+
+Maintain separate state for:
+
+pickupLocation
+pickupLatitude
+pickupLongitude
+destinationLocation
+destinationLatitude
+destinationLongitude
+
+Ensure markers update when their coordinates change.
+
+Use correct React keys and update marker positions properly.
+
+Prevent outdated geocoding responses from overwriting newer selections.
+
+Recalculate the route whenever either endpoint changes.
+
+Allow users to swap pickup and destination.
+
+Provide loading indicators while resolving locations.
+
+Display an error when a location cannot be found.
+
+Use OpenStreetMap-compatible geocoding and routing services.
+
+Do not require paid Google Maps APIs.
+
+Allow manual map pin selection as a fallback.
+
+## Map testing
+
+Test these example locations:
+
+Panaji to Margao.
+
+Vasco to Mapusa.
+
+Ponda to Panaji.
+
+Mapusa to Margao.
+
+Every selection must produce different corresponding coordinates and updated map markers.
+
+Never use hardcoded default coordinates after a user selects another location.
+
+# 8. DELIVERY PARTNER INTERFACE
+
+Create a separate partner dashboard.
+
+Navigation:
+
+- Overview.
+- Publish Journey.
+- Parcel Requests.
+- Active Deliveries.
+- Earnings.
+- Delivery History.
+- Profile.
+
+Dashboard statistics:
+
+- Total earnings.
+- Active deliveries.
+- Completed deliveries.
+- Available requests.
+- Partner rating.
+- Verification status.
+
+## 8.1 Publish an existing journey
+
+Create a form titled:
+
+"SHARE YOUR JOURNEY"
+
+Fields:
+
+- Starting location.
+- Destination.
+- Travel date.
+- Departure time.
+- Expected arrival.
+- Transportation mode.
+- Available parcel capacity.
+- Maximum weight.
+- Preferred meeting points.
+
+Display a map of the intended journey.
+
+Include this mandatory declaration:
+
+"I am already travelling on this route and am not creating a dedicated journey solely for parcel delivery."
+
+Community Relay must use existing journeys only.
+
+## 8.2 Recurring journeys
+
+Allow partners to publish recurring journeys.
+
+Examples:
+- Daily Panaji to Margao.
+- Every weekday Vasco to Panaji.
+- Weekly Goa to Mumbai.
+
+Partners should be able to:
+- Create recurring journeys.
+- Edit journeys.
+- Pause journeys.
+- Delete journeys.
+- Set availability.
+
+## 8.3 Parcel requests
+
+Display suitable requests to delivery partners.
+
+Each request card must show:
+
+- Parcel ID.
+- Pickup.
+- Destination.
+- Weight.
+- Dimensions.
+- Transportation mode.
+- Estimated distance.
+- Route compatibility.
+- Expected earnings.
+- Suggested pickup location.
+- Suggested drop-off location.
+
+Buttons:
+- Accept Request.
+- Reject Request.
+- View Details.
+
+For broadcast requests, ensure the first eligible partner to accept successfully receives the booking.
+
+Use backend database transactions to prevent multiple partners from accepting the same parcel.
+
+## 8.4 Partner earnings
+
+Display:
+- Total earnings.
+- Weekly earnings.
+- Monthly earnings.
+- Pending earnings.
+- Completed payments.
+- Transaction history.
+
+Use Recharts for earnings analytics.
+
+# 9. SIX TRANSPORTATION MODES
+
+All six transportation categories must remain in the proposed prototype scope.
+
+BIKE:
+- Local journeys.
+- Small parcels.
+- Lower delivery charges.
+
+CAR:
+- Medium parcels.
+- Flexible pickup and delivery.
+
+BUS:
+- Intercity journeys.
+- Operator permissions must be respected.
+
+TRAIN:
+- Railway-compatible parcel workflows.
+- Operator restrictions must be respected.
+
+FLIGHT:
+- Air transport compatibility.
+- Restricted goods and airline regulations must be considered.
+
+COMMERCIAL FREIGHT:
+- Larger consignments.
+- Weight and volume-based pricing.
+
+Each transportation mode must have:
+- Its own capacity.
+- Weight limits.
+- Dimension compatibility.
+- Restrictions.
+- Pricing.
+- ETA.
+- Availability.
+- Integration status.
+
+Use simulated transport workflows where real operator APIs are unavailable.
+
+Clearly identify simulated workflows.
+
+Never claim a real transport booking has occurred when it has not.
+
+# 10. MOVEX INTELLIGENCE
+
+Create a working AI/algorithmic recommendation module.
+
+AI should solve real problems rather than just displaying decorative labels.
+
+Features:
+
+A. Route Matching
+
+Match parcels with existing partner journeys based on:
+- Origin.
+- Destination.
+- Route overlap.
+- Distance deviation.
+- Transportation mode.
+- Parcel weight.
+- Dimensions.
+- Available capacity.
+- Partner availability.
+- Delivery deadline.
+
+Calculate compatibility scores out of 100.
+
+B. Smart Meeting Points
+
+Suggest convenient public meeting points.
+
+Allow the sender and partner to mutually agree on pickup and drop-off points.
+
+C. ETA Prediction
+
+Calculate ETA using:
+- Distance.
+- Transport mode.
+- Estimated speed.
+- Stops.
+- Delivery conditions.
+
+D. Dynamic Pricing
+
+Use the central backend pricing engine.
+
+E. Partner Allocation
+
+Rank suitable partners using:
+- Route compatibility.
+- Capacity.
+- Availability.
+- Reliability.
+- ETA.
+
+F. Reliability Scoring
+
+Evaluate:
+- Completed deliveries.
+- On-time deliveries.
+- Cancellations.
+- Verified complaints.
+- Handover compliance.
+
+G. Suspicious Activity Detection
+
+Identify unusual booking patterns and flag them for review.
+
+Display understandable reasons for recommendations and flags.
+
+Do not claim AI can identify the contents of an unopened parcel.
+
+# 11. MOVEX GUARD — SECURITY SYSTEM
+
+Create a dedicated parcel safety system.
+
+## Parcel classification
+
+PERMITTED:
+Ordinary permitted parcels.
+
+RESTRICTED:
+Items requiring additional checks or special transport permissions.
+
+PROHIBITED:
+Items forbidden by law or applicable platform and operator rules.
+
+## Mandatory declaration
+
+Collect:
+- Sender details.
+- Verified mobile number or demo verification.
+- Contents declaration.
+- Parcel photograph.
+- Weight.
+- Dimensions.
+- Declared value.
+- Policy acceptance.
+
+Ordinary envelopes, paper wrapping and cardboard packaging must be supported.
+
+Do not introduce:
+- Mandatory special seals.
+- Branded packaging.
+- Mandatory central inspection centres.
+
+## Suspicious activity detection
+
+Flag:
+- Repeated suspicious bookings.
+- Unusual booking frequency.
+- Repeated rejected bookings.
+- Related suspicious accounts.
+- Attempts to bypass restrictions.
+
+Allow manual review.
+
+Administrators can:
+- Approve.
+- Reject.
+- Request additional information.
+- Escalate.
+
+Do not automatically accuse users of criminal activity.
+
+# 12. DIGITAL PARCEL IDENTITY AND TRACKING
+
+Every booking must receive:
+- Unique parcel ID.
+- Digital QR code.
+- Booking timestamp.
+- Parcel photograph.
+- Pickup details.
+- Destination details.
+- Current status.
+- Custody history.
+
+Tracking statuses:
+
+CREATED
+DECLARED
+APPROVED
+MATCHING
+PARTNER_ASSIGNED
+PICKED_UP
+IN_TRANSIT
+HANDOVER_PENDING
+DELIVERED
+CANCELLED
+DISPUTED
+REJECTED
+
+Implement:
+- Pickup OTP authentication.
+- Handover authentication.
+- Recipient OTP verification.
+- GPS updates where available.
+- Route deviation alerts.
+- Timestamp records.
+- Tracking timeline.
+
+For the prototype, simulated GPS updates are acceptable if clearly labelled.
+
+Physical QR stickers and special seals must not be mandatory.
+
+# 13. FINTECH MODULE
+
+Create a functional simulated payment system.
+
+Implement:
+- Delivery pricing.
+- Payment confirmation.
+- Transaction history.
+- Platform commission.
+- Delivery partner earnings.
+- Partner payout records.
+- Refund simulation.
+- Cancellation charges.
+- Dispute-related payment holds.
+
+Use INR.
+
+Clearly identify demo transactions.
+
+Do not process real payments or claim actual payouts unless a genuine payment integration is configured.
+
+# 14. ADMIN DASHBOARD
+
+Create a dedicated administrator dashboard.
+
+Display:
+- Total users.
+- Total delivery partners.
+- Total parcels.
+- Active deliveries.
+- Completed deliveries.
+- Revenue.
+- Partner earnings.
+- Security alerts.
+- Pending disputes.
+
+Admin functionality:
+
+USER MANAGEMENT:
+- View users.
+- View partners.
+- Review verification.
+- Suspend accounts.
+
+PARCEL MANAGEMENT:
+- View all parcels.
+- Inspect declarations.
+- Monitor status.
+
+DELIVERY MANAGEMENT:
+- Monitor active deliveries.
+- View partner assignments.
+- Investigate delivery issues.
+
+MOVEX GUARD:
+- Review suspicious bookings.
+- View risk reasons.
+- Approve or reject flagged bookings.
+- Record decisions.
+
+FINTECH:
+- View transactions.
+- View refunds.
+- View partner earnings.
+- View payment status.
+
+ANALYTICS:
+- Transportation mode distribution.
+- Community Relay vs Premium Express usage.
+- Booking volume.
+- Revenue.
+- Delivery success rate.
+
+# 15. COMPLETE FRONTEND NAVIGATION
+
+PUBLIC:
+- Home.
+- How It Works.
+- Send a Parcel.
+- Deliver a Parcel.
+- Safety.
+- Login.
+
+SENDER:
+- Overview.
+- New Booking.
+- My Parcels.
+- Track Parcel.
+- Payments.
+- Disputes.
+- Profile.
+
+PARTNER:
+- Overview.
+- Publish Journey.
+- Parcel Requests.
+- Active Deliveries.
+- Earnings.
+- History.
+- Profile.
+
+ADMIN:
+- Overview.
+- Users.
+- Partners.
+- Parcels.
+- Deliveries.
+- MOVEX Guard.
+- Payments.
+- Disputes.
+- Analytics.
+
+Use simple desktop navigation and mobile bottom navigation or collapsible menus.
+
+# 16. TECHNICAL STACK
+
+Preserve the existing stack wherever possible.
+
+Preferred frontend:
+- React.
+- Vite.
+- Tailwind CSS.
+- React Router.
+- Axios.
+- Lucide React.
+- Recharts.
+- React Leaflet.
+- OpenStreetMap.
+
+Preferred backend:
+- Python.
+- FastAPI.
+- SQLAlchemy.
+- SQLite.
+- Pydantic.
+- JWT authentication.
+
+Create reusable components and centralised services.
+
+# 17. DATABASE AND BACKEND INTEGRATION
+
+Inspect the existing database and API routes before modifying anything.
+
+Maintain the existing backend architecture.
+
+Ensure the application stores and retrieves:
+
+- Users.
+- Roles.
+- Partner profiles.
+- Transportation details.
+- Existing journeys.
+- Recurring routes.
+- Parcel details.
+- Parcel declarations.
+- Bookings.
+- Route matches.
+- Meeting points.
+- Pricing.
+- Tracking records.
+- Handovers.
+- Security alerts.
+- Payments.
+- Earnings.
+- Refunds.
+- Disputes.
+- Notifications.
+
+Use database relationships and validation.
+
+All important frontend workflows must connect to the backend.
+
+Do not create fake successful API responses.
+
+Do not hardcode important booking information in frontend components.
+
+# 18. RESPONSIVE DESIGN
+
+Optimise the entire application for:
+
+- Android mobile.
+- iPhone.
+- Tablet.
+- Laptop.
+- Desktop.
+
+Mobile usability is the priority.
+
+Use:
+- Large touch-friendly buttons.
+- Simple booking forms.
+- Readable text.
+- Responsive maps.
+- Mobile-friendly dashboards.
+- Proper navigation.
+- Optimised loading.
+
+The booking process should be easy enough for a first-time user.
+
+# 19. COMPLETE END-TO-END TESTING
+
+Test the following workflows.
+
+WORKFLOW A: SENDER
+
+1. Register or log in.
+2. Select Send a Parcel.
+3. Enter pickup and destination.
+4. Verify map coordinates.
+5. Select delivery model.
+6. Choose transportation.
+7. Enter parcel weight and dimensions.
+8. Declare contents.
+9. View MOVEX Guard eligibility.
+10. View AI partner matches.
+11. View meeting point suggestions.
+12. View updated price and ETA.
+13. Confirm booking.
+14. Complete simulated payment.
+15. Track parcel.
+16. Confirm delivery.
+
+WORKFLOW B: DELIVERY PARTNER
+
+1. Register or log in.
+2. Select Deliver a Parcel.
+3. Publish an existing journey.
+4. Set capacity and availability.
+5. View matching parcel requests.
+6. Accept a suitable request.
+7. Authenticate pickup.
+8. Update tracking.
+9. Authenticate relay handover if necessary.
+10. Complete delivery.
+11. View earnings.
+
+WORKFLOW C: PREMIUM EXPRESS
+
+1. Sender selects Premium Express.
+2. Platform finds a dedicated delivery partner.
+3. Sender confirms booking.
+4. Simulated payment is completed.
+5. Partner performs doorstep pickup.
+6. Tracking updates.
+7. Recipient verifies delivery using OTP.
+8. Booking is completed.
+
+WORKFLOW D: SECURITY REVIEW
+
+1. Create a booking triggering a security rule.
+2. Generate a MOVEX Guard alert.
+3. Open the administrator dashboard.
+4. Review the alert.
+5. Inspect the booking.
+6. Approve, reject or request additional information.
+7. Save the decision in the audit history.
+
+WORKFLOW E: DYNAMIC PRICING
+
+1. Select Bike.
+2. Enter 500 g parcel weight.
+3. Record the estimate.
+4. Increase weight to 2 kg.
+5. Verify price increases.
+6. Change mode to Car.
+7. Verify the fare changes.
+8. Change pickup and destination.
+9. Verify distance, ETA and fare update.
+10. Repeat with all six transportation modes.
+
+WORKFLOW F: MAP ACCURACY
+
+Test:
+- Panaji to Margao.
+- Vasco to Mapusa.
+- Ponda to Panaji.
+- Mapusa to Margao.
+
+Confirm that changing either location updates both the map state and route correctly.
+
+# 20. DEVELOPMENT EXECUTION PLAN
+
+Do not attempt to change everything blindly in one operation.
+
+Work in phases.
+
+PHASE 1:
+Inspect existing codebase and identify current functionality.
+
+PHASE 2:
+Fix the map location and coordinate update problem.
+
+PHASE 3:
+Redesign the interface using the Rapido-inspired design system.
+
+PHASE 4:
+Implement opening screen and activity selection.
+
+PHASE 5:
+Implement sender booking and dynamic pricing.
+
+PHASE 6:
+Implement delivery partner dashboard and journey publishing.
+
+PHASE 7:
+Implement route matching and partner allocation.
+
+PHASE 8:
+Integrate MOVEX Intelligence and MOVEX Guard.
+
+PHASE 9:
+Implement tracking and authenticated handovers.
+
+PHASE 10:
+Implement FinTech and admin dashboard.
+
+PHASE 11:
+Connect all frontend and backend workflows.
+
+PHASE 12:
+Test the complete application and fix errors.
+
+After each phase:
+- Check for errors.
+- Run the application.
+- Test the modified features.
+- Preserve working functionality.
+- Continue only after the phase works.
+
+# 21. IMPORTANT DEVELOPMENT RULES
+
+- Never delete working code without a clear reason.
+- Never replace the existing backend unnecessarily.
+- Never use hardcoded map coordinates after location selection.
+- Never use the same fixed fare for every parcel.
+- Never create dedicated Community Relay journeys.
+- Never allow two partners to win the same parcel.
+- Never claim simulated transport integrations are real.
+- Never claim simulated payments are real transactions.
+- Never claim simulated GPS is live GPS.
+- Never claim AI can identify unopened parcel contents.
+- Never make buttons decorative or non-functional.
+- Never ignore backend errors.
+- Never silently replace failed API requests with fake success messages.
+- Keep the six transportation modes in scope.
+- Keep both delivery models in scope.
+- Keep normal parcel packaging supported.
+
+# 22. FINAL DELIVERY REQUIREMENTS
+
+The final MOVEX application must have:
+
+1. A premium Rapido-inspired interface.
+2. A clear Send a Parcel / Deliver a Parcel opening screen.
+3. Separate sender and delivery partner experiences.
+4. Both Community Relay and Premium Express.
+5. All six transportation modes.
+6. Working location search and map updates.
+7. Dynamic transportation-based pricing.
+8. Parcel weight and dimension validation.
+9. AI route matching.
+10. Smart meeting point suggestions.
+11. Partner journey publishing.
+12. Parcel declaration and MOVEX Guard.
+13. Digital parcel identity.
+14. OTP-based pickup and delivery.
+15. Tracking and handover history.
+16. Simulated digital payments.
+17. Partner earnings dashboard.
+18. Administrator dashboard.
+19. Responsive mobile and desktop layouts.
+20. Working end-to-end demonstration workflows.
+
+FINAL INSTRUCTION:
+
+Build and improve the actual existing MOVEX project.
+
+Do not stop after generating code or creating UI mockups.
+
+Run both frontend and backend.
+
+Verify that the application starts successfully.
+
+Test every major workflow.
+
+Fix compilation errors, runtime errors, API errors and database issues.
+
+Provide clear instructions for running the application locally.
+
+The final result must be a polished, functional and demonstrable MOVEX hackathon prototype.

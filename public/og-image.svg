@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101114" />
+      <stop offset="100%" stop-color="#181a1f" />
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD43B" />
+      <stop offset="100%" stop-color="#F5C419" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#FFFFFF" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="315" x2="1200" y2="315" />
+    <line x1="0" y1="420" x2="1200" y2="420" />
+    <line x1="0" y1="525" x2="1200" y2="525" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- Brand Wordmark & Tagline -->
+  <g transform="translate(100, 140)">
+    <!-- MOVEX Logo Icon Squircle -->
+    <rect width="84" height="84" rx="24" fill="#FFD43B" />
+    <path d="M22 62 L22 26 L42 46 L62 26 L62 62" fill="none" stroke="#101114" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <text x="110" y="58" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="54" fill="#FFFFFF" letter-spacing="-1.5">
+      MOVEX
+    </text>
+    <rect x="325" y="24" width="105" height="34" rx="10" fill="#25282D" />
+    <text x="377" y="46" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#FFD43B" text-anchor="middle">
+      COMMUNITY
+    </text>
+  </g>
+
+  <!-- Main Hero Heading -->
+  <g transform="translate(100, 290)">
+    <text font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="48" fill="#FFFFFF" letter-spacing="-1">
+      Moving Things Together
+    </text>
+    <text y="54" font-family="'DM Sans', system-ui, sans-serif" font-weight="400" font-size="24" fill="#A0A0A0">
+      AI-Powered Multi-Modal Community Parcel Relay &amp; Doorstep Express
+    </text>
+  </g>
+
+  <!-- Feature Highlights Bar -->
+  <g transform="translate(100, 430)">
+    <!-- Tag 1 -->
+    <rect width="280" height="70" rx="18" fill="#1f2227" stroke="#2c3038" stroke-width="2" />
+    <circle cx="36" cy="35" r="14" fill="#FFD43B" />
+    <text x="64" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#FFFFFF">Community Relay</text>
+    <text x="64" y="50" font-family="'DM Sans', sans-serif" font-size="12" fill="#888888">Existing Journeys Only</text>
+
+    <!-- Tag 2 -->
+    <rect x="300" width="280" height="70" rx="18" fill="#1f2227" stroke="#2c3038" stroke-width="2" />
+    <circle cx="336" cy="35" r="14" fill="#FFD43B" />
+    <text x="364" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#FFFFFF">6 Transport Modes</text>
+    <text x="364" y="50" font-family="'DM Sans', sans-serif" font-size="12" fill="#888888">Bike, Car, Train, Flight &amp; More</text>
+
+    <!-- Tag 3 -->
+    <rect x="600" width="280" height="70" rx="18" fill="#1f2227" stroke="#2c3038" stroke-width="2" />
+    <circle cx="636" cy="35" r="14" fill="#FFD43B" />
+    <text x="664" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#FFFFFF">OTP Custody Ledger</text>
+    <text x="664" y="50" font-family="'DM Sans', sans-serif" font-size="12" fill="#888888">Verified 3-Stage Handovers</text>
+  </g>
+
+  <!-- URL watermark -->
+  <text x="1100" y="575" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="600" fill="#FFD43B" text-anchor="end">
+    movex.app
+  </text>
+</svg>
