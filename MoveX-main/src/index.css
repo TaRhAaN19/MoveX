@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --movex-black: #101114;
+    --movex-white: #FFFFFF;
+    --movex-yellow: #FFD43B;
+    --movex-yellow-hover: #F5C419;
+    --movex-grey: #F5F5F5;
+    --movex-graphite: #25282D;
+    --movex-muted: #777777;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FFFFFF;
+    color: #101114;
+  }
+
+  /* Form control color hygiene: prevent text from inheriting dark theme colors on light backgrounds */
+  input, select, textarea {
+    color: #101114;
+  }
+
+  select option {
+    background-color: #FFFFFF;
+    color: #101114;
+  }
+
+  .dark body {
+    background-color: #101114;
+    color: #EDEDED;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet map container hygiene */
+.leaflet-container {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  z-index: 1;
+}
+
+.movex-custom-pin {
+  background: transparent;
+  border: none;
+}
+
+/* Smooth Focus Outlines for Accessibility */
+:focus-visible {
+  outline: 2px solid #FFD43B;
+  outline-offset: 2px;
+}
+
+/* Feature 43: Visually Hidden for Skip Link */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.25rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: #FFD43B;
+  color: #101114;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature 33: Print Stylesheet */
+@media print {
+  header, nav, footer, .no-print, button, input[type="submit"] {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  .leaflet-container {
+    filter: grayscale(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

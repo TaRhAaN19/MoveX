@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /how-it-works
+Allow: /safety
+Allow: /track
+Allow: /auth
+Allow: /privacy
+Allow: /terms
+Disallow: /api/
+Disallow: /admin
+Disallow: /sender
+Disallow: /partner
+
+Sitemap: https://movex.app/sitemap.xml
